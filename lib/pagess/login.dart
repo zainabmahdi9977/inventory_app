@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
   late Repository _repository;
   String error = "";
   LoginPageBloc bloc = LoginPageBloc();
-  String currentServer = 'Local';
+  String currentServer = 'Production';
   final Map<String, String> serverNames = {
     'https://productionback.invopos.co': 'Production',
     'https://testBack.invopos.co': 'Test',
@@ -77,9 +77,9 @@ void dispose() {
   Future<void> _loadCurrentServer() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String url =prefs.getString('serverURL') ??
-     'http://10.2.2.95:3001';
+     'https://productionback.invopos.co';
     setState(() {
-      currentServer = serverNames[url] ?? 'Local';
+      currentServer = serverNames[url] ?? 'Production';
     });
   }
 
