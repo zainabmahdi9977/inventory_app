@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:inventory_app/Utlits.dart';
 import 'package:inventory_app/Widgetss/BottomNavigationBar2.dart';
+import 'package:inventory_app/Widgetss/SnackBar.dart';
 import 'package:inventory_app/Widgetss/bottomNavigationBar.dart';
 import 'package:inventory_app/Widgetss/customappbar.dart';
 import 'package:inventory_app/bloc/TransferOut/TransferOutFormBloc.dart';
@@ -125,15 +126,15 @@ class _TransferOutFormpageState extends State<TransferOutFormpage> {
     
   }
 
-  void _showSnackBar(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: const Duration(seconds: 2),
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
-  }
+  // void _showSnackBar(String message) {
+  //   ScaffoldMessenger.of(context).showSnackBar(
+  //     SnackBar(
+  //       content: Text(message),
+  //       duration: const Duration(seconds: 2),
+  //       behavior: SnackBarBehavior.floating,
+  //     ),
+  //   );
+  // }
 
   // void updateInitialValues() {
   //   setState(() {
@@ -1287,7 +1288,7 @@ Future<void> _showErrorDialog(String message, [InventoryTransferLine? line]) asy
                                                                         fetchedProduct!
                                                                             .barcode);
                                                                 if (barcodeExists) {
-                                                                  _showSnackBar(
+                                                                  SnackBarUtil.showSnackBar(context,
                                                                       'product already added'
                                                                           .tr());
                                                                 } else {
@@ -1297,7 +1298,7 @@ Future<void> _showErrorDialog(String message, [InventoryTransferLine? line]) asy
                                                                 _barcodeController
                                                                     .clear();
                                                               } else {
-                                                                _showSnackBar(
+                                                             SnackBarUtil.showSnackBar(context,
                                                                     'Product not found'
                                                                         .tr());
                                                               }
@@ -1337,20 +1338,20 @@ Future<void> _showErrorDialog(String message, [InventoryTransferLine? line]) asy
                                                                           .id);
                   if (barcodeExists) {
           
-          if (lastSnackBarTime == null || DateTime.now().difference(lastSnackBarTime!).inSeconds >= 3.5) {
-            _showSnackBar('product already added'.tr());
+         
+           SnackBarUtil.showSnackBar(context,'product already added'.tr());
             lastSnackBarTime = DateTime.now();
-          }
+         
         } else {
           _showQuantityDialog(fetchedProduct);
         }
         
       } else {
         
-        if (lastSnackBarTime == null || DateTime.now().difference(lastSnackBarTime!).inSeconds >= 3.5) {
-          _showSnackBar('Product not found'.tr());
+        
+         SnackBarUtil.showSnackBar(context,'Product not found'.tr());
           lastSnackBarTime = DateTime.now(); 
-        }
+       
       }
     }_barcodeController
                                                                   .clear();
@@ -1436,7 +1437,7 @@ Future<void> _showErrorDialog(String message, [InventoryTransferLine? line]) asy
                                                                     fetchedProduct!
                                                                         .id);
                                                             if (barcodeExists) {
-                                                              _showSnackBar(
+                                                             SnackBarUtil.showSnackBar(context,
                                                                   'product already added'
                                                                       .tr());
                                                             } else {

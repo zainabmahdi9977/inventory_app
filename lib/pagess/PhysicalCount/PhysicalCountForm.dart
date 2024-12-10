@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:inventory_app/Utlits.dart';
 import 'package:inventory_app/Widgetss/BottomNavigationBar2.dart';
+import 'package:inventory_app/Widgetss/SnackBar.dart';
 import 'package:inventory_app/Widgetss/bottomNavigationBar.dart';
 import 'package:inventory_app/Widgetss/customappbar.dart';
 import 'package:inventory_app/bloc/PhysicalCount/PhysicalCountFormBloc.dart';
@@ -84,16 +85,16 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
     super.dispose();
   }
 
-  void _showSnackBar(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration:
-            const Duration(seconds: 2), // Duration for the snackbar to appear
-        behavior: SnackBarBehavior.floating, // Optional: Make it floating
-      ),
-    );
-  }
+  // void _showSnackBar(String message) {
+  //   ScaffoldMessenger.of(context).showSnackBar(
+  //     SnackBar(
+  //       content: Text(message),
+  //       duration:
+  //           const Duration(seconds: 2), // Duration for the snackbar to appear
+  //       behavior: SnackBarBehavior.floating, // Optional: Make it floating
+  //     ),
+  //   );
+  // }
 
   void _validateAndSave(BuildContext context) {
     if (widget.bloc.physicalCount.lines.isEmpty) {
@@ -752,7 +753,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                                                                           fetchedProduct
                                                                               .id);
                                                                   if (barcodeExists) {
-                                                                    _showSnackBar(
+                                                                   SnackBarUtil.showSnackBar(context,
                                                                         'product already added'
                                                                             .tr());
                                                                   } else {
@@ -762,7 +763,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                                                                   _barcodeController
                                                                       .clear();
                                                                 } else {
-                                                                  _showSnackBar(
+                                                                 SnackBarUtil.showSnackBar(context,
                                                                       'Product not found'
                                                                           .tr());
                                                                 }
@@ -784,20 +785,20 @@ getBranchProductByBarcode( Utilts .branchid, searchTerm:barcode);
  => line.productId ==  fetchedProduct.id);
         if (barcodeExists) {
         
-          if (lastSnackBarTime == null || DateTime.now().difference(lastSnackBarTime!).inSeconds >= 3.5) {
-            _showSnackBar('product already added'.tr());
-            lastSnackBarTime = DateTime.now(); 
-          }
+          
+           SnackBarUtil.showSnackBar(context,('product already added'.tr()));
+            
+        
         } else {
           _showQuantityDialog(fetchedProduct);
         }
         
       } else {
        
-        if (lastSnackBarTime == null || DateTime.now().difference(lastSnackBarTime!).inSeconds >= 3.5) {
-          _showSnackBar('Product not found'.tr());
-          lastSnackBarTime = DateTime.now(); 
-        }
+       
+          SnackBarUtil.showSnackBar(context,'Product not found'.tr());
+          
+   
       }
  }   _barcodeController.clear();
                                                           }
@@ -889,7 +890,7 @@ getBranchProductByBarcode( Utilts .branchid, searchTerm:barcode);
                                                                       fetchedProduct!
                                                                           .id);
                                                               if (barcodeExists) {
-                                                                _showSnackBar(
+                                                              SnackBarUtil.showSnackBar(context,
                                                                     'product already added'
                                                                         .tr());
                                                               } else {

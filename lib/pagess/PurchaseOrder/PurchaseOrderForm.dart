@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 import 'package:inventory_app/Utlits.dart';
 import 'package:inventory_app/Widgetss/BottomNavigationBar2.dart';
+import 'package:inventory_app/Widgetss/SnackBar.dart';
 import 'package:inventory_app/Widgetss/customappbar.dart';
 import 'package:inventory_app/bloc/PurchaseOrder/PurchaseOrderFormBloc.dart';
 import 'package:inventory_app/modelss/PurchaseOrder/PurchaseOrder.dart';
@@ -209,15 +210,15 @@ DateTime? lastSnackBarTime;
     qtyController.dispose();
   }
 
-  void _showSnackBar(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: const Duration(seconds: 2),
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
-  }
+  // void _showSnackBar(String message) {
+  //   ScaffoldMessenger.of(context).showSnackBar(
+  //     SnackBar(
+  //       content: Text(message),
+  //       duration: const Duration(seconds: 2),
+  //       behavior: SnackBarBehavior.floating,
+  //     ),
+  //   );
+  // }
 
   void _showErrorDialog(String message) {
     showDialog(
@@ -559,7 +560,7 @@ DateTime? lastSnackBarTime;
                                                                   fetchedProduct!
                                                                       .id);
                                                           if (barcodeExists)
-                                                            _showSnackBar(
+                                                            SnackBarUtil.showSnackBar(context,
                                                                 'product already added'
                                                                     .tr());
                                                           else
@@ -570,7 +571,7 @@ DateTime? lastSnackBarTime;
                                                           _barcodeController
                                                               .clear();
                                                         } else {
-                                                          _showSnackBar(
+                                                        SnackBarUtil.showSnackBar(context,
                                                               'Product not found'
                                                                   .tr());
                                                         }
@@ -606,20 +607,19 @@ DateTime? lastSnackBarTime;
                                                                     .id);
                                                                                       if (barcodeExists) {
        
-          if (lastSnackBarTime == null || DateTime.now().difference(lastSnackBarTime!).inSeconds >= 3.5) {
-            _showSnackBar('product already added'.tr());
+         
+            SnackBarUtil.showSnackBar(context,'product already added'.tr());
             lastSnackBarTime = DateTime.now(); 
-          }
+          
         } else {
           _showQuantityDialog(barcode,fetchedProduct.name);
         }
         
       } else {
-        // Same check for product not found
-        if (lastSnackBarTime == null || DateTime.now().difference(lastSnackBarTime!).inSeconds >= 3.5) {
-          _showSnackBar('Product not found'.tr());
+    
+       SnackBarUtil.showSnackBar(context,'Product not found'.tr());
           lastSnackBarTime = DateTime.now(); 
-        }
+        
       }
                                                     } _barcodeController
                                                             .clear();
@@ -697,7 +697,7 @@ DateTime? lastSnackBarTime;
                                                               fetchedProduct!
                                                                   .id);
                                                       if (barcodeExists)
-                                                        _showSnackBar(
+                                                       SnackBarUtil.showSnackBar(context,
                                                             'product already added'
                                                                 .tr());
                                                       else
