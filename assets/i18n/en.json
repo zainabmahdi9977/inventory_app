@@ -1,0 +1,149 @@
+{
+
+    "Name": "Name",
+    "Your branch is ":"Your branch is ",
+    "Transfer\nOut":"Transfer\nOut",
+    "Physical\nCount":"Physical\nCount",
+    "Create\nList":"Create\nList",
+    "Purchase\nOrder":"Purchase\nOrder",
+    "Transfer Out":"Transfer Out",
+    "Physical Count":"Physical Count",
+    "Create List":"Create List",
+    "Purchase Order":"Purchase Order",
+    "Choose an action":"Choose an action",
+   
+    "Note": "Note",
+    "Cancel":  "Cancel",
+    "Confirm Deletion":"Confirm Deletion",
+    "Are you sure you want to delete this list?":"Are you sure you want to delete this list?",
+    "Save": "Save",
+ 
+    "Back": "Back",
+    "Delete":"Delete",
+
+    "No":"No",
+    
+    
+    "Increase Qty":  "Increase Qty",
+    "Decrease Qty": "Decrease Qty",
+   "Product onHand: ":"Product onHand: ",
+    "Search": "Search",
+    
+    "Yes":  "Yes",
+    "Ok": "OK",
+   
+    "Branch":  "Branch",
+    "Total": "Total",
+    "Close": "Close",
+   
+    "Done": "Done",
+    
+    "Choose a Batch": "Choose a Batch",
+   
+    "Choose a Serial":  "Choose a Serial",
+    
+    "All Branches": "All Branches",
+  
+    "Reset": "Reset",
+    "GO": "GO",
+    
+    "New": "New",
+    
+    "Okay":"Okay",
+    
+    "LogOut": "Log Out",
+    "ar_en": "English",
+
+    "Item Total": "Item Total",
+   
+    "العربية": "Arabic",
+    "Arabic": "Arabic",
+   "english": "Arabic",
+   
+   "Branches": "Branches",
+   "Edit": "Edit",
+
+   "Enter Qty": "Enter Qty",
+   "Item(s) Sub Total": "Item(s) Sub Total",
+
+   "Enter Quantity":"Enter Quantity",
+   "Product Name: ":"Product Name: ",
+   "Batch":"Batch",
+    "On Hand":"On Hand",
+    "On \nHand":"On\nHand",
+    "Quantity":"Quantity",
+    "Select Supplier":"Select Supplier",
+    "Please select a supplier.":"Please select a supplier.",
+    "Error":"Error",
+    "Name cannot be empty.":"Name cannot be empty.",
+    "No items to save. Please add items.":"No items to save. Please add items.",
+    "Created List successfully!":"Created List successfully!",
+     "Convaret to Purchase Order": "Convaret to Purchase Order",
+      "Convaret to Physical Count": "Convaret to Physical Count",
+       "Convaret to Transfer Out": "Convaret to Transfer Out",
+       "Next":"Next",
+       "Enter barcode":"Enter barcode",
+       "Add":"Add",
+       "product already added":"product already added",
+       "Product not found":"Product not found",
+       "Access Denied":"Access Denied",
+       "You are not allowed to perform this action.":"You are not allowed to perform this action.",
+       "Unit Cost":"Unit Cost",
+       "Unit \nCost":"Unit \nCost",
+       "Qty":"Qty",
+       "Select":"Select",
+       "Select From The List":"Select From The List",
+       "item Number:":"item Numbers:",
+       "Please add at least one item.":"Please add at least one item.",
+       "Reference No":"Reference No",
+       "Calculated Value: ":"Calculated Value: ",
+       "Items":"Items",
+       "Entered Qty":"Entered Qty",
+       "Open":"Open",
+       "Calculated":"Calculated",
+       "Closed":"Closed",
+       "Date":"Date",
+       "Success":"Success",
+       "Purchase Order saved successfully!":"Purchase Order saved successfully!",
+       "Physical Count saved successfully!":"Physical Count saved successfully!",
+       "Physical Count Calculated successfully!":"Physical Count Calculated successfully!",
+       "Physical Count Open successfully!":"Physical Count Open successfully!",
+       "Failed to Save Count order":"Failed to Save Physical Count",
+       "Please fill in all fields":"Please fill in all fields",
+      "Issued Date":"Issued Date",
+      "Sub Total: ":"Sub Total: ",
+      "Tax Total: ":"Tax Total: ",
+      "Total: ":"Total: ",
+      "PO Number":"PO Number",
+      "Supplier":"Supplier",
+      "Sorry,  there are no available items for ":"Sorry,  there are no available items for ",
+      
+       "inventory Transfer open successfully!": "inventory Transfer open successfully!",
+       "Faild to open inventory Transfer!":"Faild to open inventory Transfer!",
+       "Standard":"Standard",
+      "Delete the product":"Delete the product",
+      "Edit Qty":"Edit Qty",
+       "Return to supplier":"Return to supplier",
+       "To Another Branch":"To Another Branch",
+       "Wastage":"Wastage",
+       "Expired":"Expired",
+       "Damaged":"Damaged",
+       "Operational usage":"Operational usage",
+       "Quantity for":"Quantity for",
+       "must be less than or equal to On Hand.":"must be less than or equal to On Hand.",
+       "Quantity must be greater than 0 for ":"Quantity must be greater than 0 for ",
+      "Sorry, you cannot proceed because there are no available items for this product.":"Sorry, you cannot proceed because there are no available items for this product.",
+      "Cannot decrease quantity below 1.":"Cannot decrease quantity below 1.",
+"You have reached the maximum quantity available in stock.":"You have reached the maximum quantity available in stock.",
+"Sorry, you cannot add this product because the onHand is ":"Sorry, you cannot add this product because the onHand is ",
+"Transfer Reason":"Transfer Reason",
+"Select Branch":"Select Branch",
+"Confirmed":"Confirmed",
+"Transfer \nNo":"Transfer \nNo",
+"Reason":"Reason",
+"OK":"OK"
+
+  
+       
+
+   }
