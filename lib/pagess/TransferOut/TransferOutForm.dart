@@ -848,11 +848,13 @@ Future<void> _showErrorDialog(String message, [InventoryTransferLine? line]) asy
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
+          actionsPadding: EdgeInsets.symmetric(horizontal:1,vertical:10),
         title: Text("Error".tr()),
         content: Text(message),
         actions: [
-         
-          Row(
+              
+          Row( 
+                crossAxisAlignment: CrossAxisAlignment.start,
             children: [ if (line!.onhand>0)
               TextButton(
                 onPressed: () {
