@@ -53,9 +53,9 @@
     
     "LogOut": "Log Out",
     "ar_en": "English",
-
+    "User":"User",
     "Item Total": "Item Total",
-   
+   " Choose a Branch":"Choose a Branch",
     "العربية": "Arabic",
     "Arabic": "Arabic",
    "english": "Arabic",
@@ -128,6 +128,7 @@
        "Wastage":"Wastage",
        "Expired":"Expired",
        "Damaged":"Damaged",
+       " Hello ":" Hello ",
        "Operational usage":"Operational usage",
        "Quantity for":"Quantity for",
        "must be less than or equal to On Hand.":"must be less than or equal to On Hand.",

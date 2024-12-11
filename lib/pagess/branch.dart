@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:inventory_app/Utlits.dart';
 import 'package:inventory_app/bloc/branch.page.bloc.dart';
 import 'package:inventory_app/modelss/branch.models.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:inventory_app/serviecs/connection.services.dart';
 import 'package:inventory_app/pagess/homepage.dart';
 import 'package:inventory_app/serviecs/login.services.dart';
@@ -76,7 +76,7 @@ openDialog(context) => showMenu(
           onTap: () {
           logoutUser(context);
           },
-          child:  Text('Logout', style: TextStyle(fontSize: 18),)),
+          child:  Text("LogOut".tr(), style: TextStyle(fontSize: 18),)),
         ],
       ),
     ),
@@ -146,7 +146,7 @@ openDialog(context) => showMenu(
                   return Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(' Hello ',
+                       Text(' Hello '.tr(),
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold)),
                       Text(employee.name,
@@ -155,11 +155,11 @@ openDialog(context) => showMenu(
                     ],
                   );
                 } else {
-                  return const Text('User');
+                  return  Text('User'.tr());
                 }
               },
             ),
-            const Text('Choose a Branch', style: TextStyle(fontSize: 20)),
+             Text('Choose a Branch'.tr(), style: TextStyle(fontSize: 20)),
             const SizedBox(height: 16.0),
             StreamBuilder(
                 stream: widget.bloc.branches.stream,

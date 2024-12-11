@@ -73,25 +73,7 @@ Future<void> loadbranch() async {
       print('Error fetching products: $e');
     }
     return serials;
-  }
-// Future<bool> loadbranch() async {
-//   if (!GetIt.instance.isRegistered<Repository>()) {
-//     _repository = Repository();
-//     GetIt.instance.registerSingleton<Repository>(_repository);
-//     await _repository.load();
-//   } else {
-//     _repository = GetIt.instance.get<Repository>();
-//   }
-
-//   // Filter out branches that match the utilist.branchId
-//   final filteredBranches = _repository.branches
-//       .where((branch) => branch.id != Utilts.branchid)
-//       .toList(); // Convert Iterable to List
-  
-//   branches.sink(filteredBranches);
-
-//   return true;
-// }
+  }                                          
   factory TransferOutFormBloc.newIT(List<String> allBarcodes) {
     TransferOutFormBloc transferOutFormBloc = TransferOutFormBloc();
      transferOutFormBloc.allBarcode=allBarcodes;

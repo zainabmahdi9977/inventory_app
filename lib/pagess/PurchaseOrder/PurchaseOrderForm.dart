@@ -91,7 +91,7 @@ DateTime? lastSnackBarTime;
 
   Future<void> _showQuantityDialog(String barcode, String productName) async {
     final TextEditingController qtyController = TextEditingController();
-    int quantity = 0; // Initialize quantity
+    int quantity = 0; 
 
     qtyController.text = quantity.toString();
 
@@ -210,15 +210,7 @@ DateTime? lastSnackBarTime;
     qtyController.dispose();
   }
 
-  // void _showSnackBar(String message) {
-  //   ScaffoldMessenger.of(context).showSnackBar(
-  //     SnackBar(
-  //       content: Text(message),
-  //       duration: const Duration(seconds: 2),
-  //       behavior: SnackBarBehavior.floating,
-  //     ),
-  //   );
-  // }
+
 
   void _showErrorDialog(String message) {
     showDialog(
@@ -917,10 +909,6 @@ DateTime? lastSnackBarTime;
           ],
           rows: List<DataRow>.generate(lines.length, (index) {
             final line = lines[index];
-
-            //String s =widget.bloc.fetchProductById(line.barcode) as String;
-            // int qty = widget.quantities[order.id] ?? 0;
-            // double total = qty * order.unitCost;
             final productId = line.productId;
             return DataRow(
               cells: [
@@ -998,7 +986,8 @@ DateTime? lastSnackBarTime;
                   ),
                 ),
                 DataCell(Center(child: Text(line.total.toStringAsFixed(2)))),
-                DataCell(Center(
+                DataCell(
+                  Center(
                     child: IconButton(
                   icon: const Icon(Icons.cancel_outlined, color: Colors.red),
                   onPressed: () {

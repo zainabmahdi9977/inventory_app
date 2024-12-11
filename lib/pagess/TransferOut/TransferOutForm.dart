@@ -109,9 +109,7 @@ class _TransferOutFormpageState extends State<TransferOutFormpage> {
           line);
              return;}if (line.qty > line.onhand) {
         await _showErrorDialog(
-            "Quantity for".tr() +
-                " ${line.product?.name} " +
-                "must be less than or equal to On Hand.".tr(),
+            "${"Quantity for".tr()} ${line.product?.name} ${"must be less than or equal to On Hand.".tr()}",
             line);
         return;
       }
@@ -126,24 +124,8 @@ class _TransferOutFormpageState extends State<TransferOutFormpage> {
     
   }
 
-  // void _showSnackBar(String message) {
-  //   ScaffoldMessenger.of(context).showSnackBar(
-  //     SnackBar(
-  //       content: Text(message),
-  //       duration: const Duration(seconds: 2),
-  //       behavior: SnackBarBehavior.floating,
-  //     ),
-  //   );
-  // }
 
-  // void updateInitialValues() {
-  //   setState(() {
-  //     reason = widget.bloc.inventoryTransfer.reason.isNotEmpty
-  //         ? widget.bloc.inventoryTransfer.reason
-  //         : Reason.first;
-  //     // Logic to set initialBranchId based on current state
-  //   });
-  // }
+
   Future<void> _showQuantityDialog(Product? fetchedProduct) async {
     final TextEditingController qtyController = TextEditingController();
     double quantity = 0;
@@ -915,20 +897,13 @@ Future<void> _showErrorDialog(String message, [InventoryTransferLine? line]) asy
                 Expanded(
                   child: SingleChildScrollView(
                     child: Center(
-                      //  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    
                       child: StreamBuilder<Object>(
                           stream: widget.bloc.onTableUpdate.stream,
                           builder: (context, snapshot) {
                             return Column(
                               children: [
-                                //                     Text(
-                                //               widget.bloc.msg,
-                                //               style: TextStyle(
-                                // fontSize: 16,
-                                // color: widget.bloc.msg.startsWith('Failed')
-                                //     ? Colors.red
-                                //     : Colors.green,
-                                //               ),),
+    
 
                                 Container(
                                   margin: const EdgeInsets.only(
@@ -1014,11 +989,9 @@ Future<void> _showErrorDialog(String message, [InventoryTransferLine? line]) asy
                                                       .inventoryTransfer.reason
                                                       .tr()
                                                   : Reason.first
-                                                      .tr(), // Initial value
+                                                      .tr(), 
                                             ),
-                                            // initialSelection: widget.bloc.inventoryTransfer.reason.isNotEmpty
-                                            //     ? widget.bloc.inventoryTransfer.reason
-                                            //     : Reason.first,
+                                            
                                             inputDecorationTheme:
                                                 const InputDecorationTheme(
                                               filled: false,

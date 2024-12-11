@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:intl/intl.dart';
 import 'package:inventory_app/Utlits.dart';
 import 'package:inventory_app/Widgetss/bottomNavigationBar.dart';
 import 'package:inventory_app/bloc/TransferOut/TransferOutListBloc.dart';
@@ -172,7 +169,7 @@ List<InventoryTransfer> openITItems = [];
                         ),
                         child:  Text(
                           "New".tr(),
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 17),
@@ -205,18 +202,8 @@ List<InventoryTransfer> openITItems = [];
                   child: TabBarView(
                     controller: _tabController,
                     children: [       
-                      //   FutureBuilder<List<InventoryTransfer>>(
-                      //   future: widget.bloc.loadConfirmedIT(),
-                      //   builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      //     return list(snapshot);
-                      //   },
-                      // ),
-                      // FutureBuilder<List<InventoryTransfer>>(
-                      //   future: widget.bloc.loadOpenIT(),
-                      //   builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      //     return list(snapshot);
-                      //   },
-                 _buildList(openITItems, true),          // ),
+
+                 _buildList(openITItems, true),      
               _buildList(ConfirmedITItems ,false ), 
           
                     
@@ -228,7 +215,7 @@ List<InventoryTransfer> openITItems = [];
           ),
           bottomNavigationBar: bottomNavigationBar(
               onPressed: () {
-         //  NavigationService(context).goBackToHomePage();
+        
         
                 Navigator.pushReplacement(
                   context,
@@ -250,7 +237,7 @@ List<InventoryTransfer> openITItems = [];
         }
         return false;
       },
-      child: Container(width: 500,child: dataTable(inventory: inventoryTransfer, isedit: isedit)),
+      child: SizedBox(width: 500,child: dataTable(inventory: inventoryTransfer, isedit: isedit)),
     );
   }
   Widget dataTable({required List<InventoryTransfer> inventory , required bool isedit}  ) {
@@ -270,11 +257,7 @@ List<InventoryTransfer> openITItems = [];
               ),
             ),
           ),
-          // DataColumn(
-          //   label: Expanded(
-          //     child: Center(child: Text("Reference No")),
-          //   ),
-          // ),
+
            DataColumn(
             numeric: true,
             label: Expanded(
@@ -300,7 +283,7 @@ List<InventoryTransfer> openITItems = [];
           return DataRow(
             cells: [
               DataCell(Center(child: Text(inventorys.transferNumber))),
-  //  DataCell(Center(child: Text(inventorys.reference ))),
+  
               DataCell(Center(child: Text(inventorys.reason.tr() , textAlign: TextAlign.center,))),
               DataCell(Center(child:  Text(
       DateFormat('yyyy-MM-dd').format(inventorys.createdDate), // Format the date
