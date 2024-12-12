@@ -16,6 +16,7 @@ class branchPageBloc implements BlocBase {
 
   branchPageBloc() {
     _initializeRepository();
+    loadData();
   }
 
   void _initializeRepository() {

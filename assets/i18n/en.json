@@ -22,7 +22,7 @@
     "Delete":"Delete",
 
     "No":"No",
-    
+    "Log in":"Log in",
     
     "Increase Qty":  "Increase Qty",
     "Decrease Qty": "Decrease Qty",
@@ -56,10 +56,16 @@
     "User":"User",
     "Item Total": "Item Total",
    " Choose a Branch":"Choose a Branch",
+   "Email": "Email",
+   "     Enter email address":"     Enter email address",
+   "Please correct email filled":"Please correct email filled",
     "العربية": "Arabic",
     "Arabic": "Arabic",
    "english": "Arabic",
-   
+   "Password":"Password",
+   "Please enter Password":"Please enter Password",
+   "Password must be atlist 6 digit":"Password must be atlist 6 digit",
+   "Forget Password?":"Forget Password?",
    "Branches": "Branches",
    "Edit": "Edit",
 

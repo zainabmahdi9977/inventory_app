@@ -139,8 +139,16 @@
   "Select Branch": "اختر الفرع",
   "Confirmed": "مؤكد",
   "Transfer \nNo": "رقم\nالتحويل",
+  "Email":"الإيميل",
+"     Enter email address":"     ادخل الايميل",
+"Please correct email filled":"يرجى تصحيح حقل البريد الإلكتروني",
   "Reason": "السبب",
-  "OK":"موافق"
+  "OK":"موافق",
+  "Password": "كلمة المرور",
+  "Please enter Password": "يرجى إدخال كلمة المرور",
+  "Password must be at least 6 digits": "يجب أن تكون كلمة المرور على الأقل 6 أحرف",
+  "Forget Password?": "هل نسيت كلمة المرور؟",
+  "Log in":"تسجيل دخول"
 
   
  }

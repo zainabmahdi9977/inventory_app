@@ -269,7 +269,9 @@ class _TransferOutFormpageState extends State<TransferOutFormpage> {
                     quantity =
                         serial!.where((s) => s!.isSelected).length.toDouble();
                   }
-
+                  if(quantity==0)
+                   quantity = 1;
+                  
                   widget.bloc.fetchProduct(
                     context,
                     fetchedProduct.barcode,
@@ -837,30 +839,38 @@ Future<void> _showErrorDialog(String message, [InventoryTransferLine? line]) asy
               
           Row( 
                 crossAxisAlignment: CrossAxisAlignment.start,
-            children: [ if (line!.onhand>0)
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: Text("OK".tr()),
-              ),          if (line != null)
-            TextButton(
-              onPressed: () {
-                widget.bloc.removeLine(line);
-                
-                Navigator.of(context).pop();
-              },
-              child: Text("Delete the product".tr()),
-            ),
-          if (line != null && line.onhand > 0)
-            TextButton(
-              onPressed: () {
-                _showQuantityDialog2(line);
-                Navigator.of(context).pop();
-              },
-              child: Text("Edit Qty".tr()),
-            ),
-            ],
+children: [
+  if (line == null) 
+    TextButton(
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+      child: Text("OK".tr()),
+    ),
+  if (line != null) ...[
+    TextButton(
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+      child: Text("OK".tr()),
+    ),
+    if (line.onhand > 0)
+      TextButton(
+        onPressed: () {
+          _showQuantityDialog2(line);
+          Navigator.of(context).pop();
+        },
+        child: Text("Edit Qty".tr()),
+      ),
+    TextButton(
+      onPressed: () {
+        widget.bloc.removeLine(line);
+        Navigator.of(context).pop();
+      },
+      child: Text("Delete the product".tr()),
+    ),
+  ]
+],
           ),
 
         ],

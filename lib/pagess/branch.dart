@@ -61,28 +61,74 @@ class _branchPageState extends State<branchPage> with WidgetsBindingObserver {
       });
     }
   }
-openDialog(context) => showMenu(
-  context: context,
-  position: const RelativeRect.fromLTRB(280, 75, 10, 0),
-  items: [
-    PopupMenuItem(
-      value: 'logout',
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Icon(Icons.logout),
-          SizedBox(width: 8),
-        GestureDetector(
-          onTap: () {
-          logoutUser(context);
-          },
-          child:  Text("LogOut".tr(), style: TextStyle(fontSize: 18),)),
+  openDialog(context) => showMenu(
+        context: context,
+        position: RelativeRect.fromLTRB(
+            Localizations.localeOf(context).toString() == "en" ? 280 : 10,
+            75,
+            Localizations.localeOf(context).toString() == "en" ? 10 : 280,
+            0),
+        items: [
+          PopupMenuItem(
+            value: "Logout",
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Icon(Icons.logout),
+                SizedBox(width: 8),
+                Expanded(
+                  child: GestureDetector(
+                      onTap: () {
+                        logoutUser(context);
+                      },
+                      child: Text(
+                        "LogOut".tr(),
+                        style: TextStyle(fontSize: 18),
+                      )),
+                ),
+              ],
+            ),
+          ),
+          PopupMenuItem(
+           
+            child: StreamBuilder(
+                    stream: Utilts.updateLanguage.stream,
+                  
+                  
+                    builder: (context, snapshot)  {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(Icons.language),
+                    SizedBox(width: 8),
+                    Expanded(
+                      child: GestureDetector(
+                          onTap: () {
+                                                  if ((Localizations.localeOf(context).toString() ==
+                                        "en")) {
+                                      context.setLocale(Locale('ar'));
+                                      Utilts.updateLanguage.sink(true);
+                                    } else if ((Localizations.localeOf(context)
+                                            .toString() ==
+                                        "ar")) {
+                                      context.setLocale(Locale('en'));
+                                      Utilts.updateLanguage.sink(true);
+                                    }
+                                   Navigator.pop(context);  
+                          },
+                          child: Text(
+                            "english".tr(),
+                            style: TextStyle(fontSize: 18),
+                          )),
+                    ),
+                  ],
+                );
+              }
+            ),
+          ),
+
         ],
-      ),
-    ),
- 
-  ],
-);
+      );
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     super.didChangeAppLifecycleState(state);
