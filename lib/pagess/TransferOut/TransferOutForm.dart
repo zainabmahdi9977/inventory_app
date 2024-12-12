@@ -87,10 +87,10 @@ class _TransferOutFormpageState extends State<TransferOutFormpage> {
 
   @override
   void dispose() {
-    // _referenceController.dispose();
-    // _noteController.dispose();
-    // _barcodeController.dispose();
-    // _dateController.dispose();
+    _referenceController.dispose();
+    _noteController.dispose();
+    _barcodeController.dispose();
+    _dateController.dispose();
     widget.bloc.dispose();
     super.dispose();
   }
