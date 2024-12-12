@@ -99,7 +99,7 @@ DateTime? lastSnackBarTime;
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+          contentPadding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
           title: Text(
             "Enter Quantity".tr(),
             textAlign: TextAlign.center,
@@ -114,23 +114,23 @@ DateTime? lastSnackBarTime;
                   children: [
                     TextSpan(
                       text: 'Product Name: '.tr(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.black),
                     ),
                     TextSpan(
                       text: '$productName ',
-                      style: TextStyle(fontSize: 16, color: Colors.black),
+                      style: const TextStyle(fontSize: 16, color: Colors.black),
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Center(
-                child: Container(
+                child: SizedBox(
                   width: 150,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -154,7 +154,7 @@ DateTime? lastSnackBarTime;
                           controller: qtyController,
                           keyboardType: TextInputType.number,
                           textAlign: TextAlign.center,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: InputBorder.none,
                           ),
                           onChanged: (value) {
@@ -289,7 +289,7 @@ DateTime? lastSnackBarTime;
                               // Check for loading state
                               if (snapshot.connectionState ==
                                   ConnectionState.waiting) {
-                                return Center(
+                                return const Center(
                                     child:
                                         CircularProgressIndicator()); // Show loading indicator
                               } else if (snapshot.hasError) {
@@ -421,7 +421,7 @@ DateTime? lastSnackBarTime;
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text("Items".tr(),
-                                    style: TextStyle(fontSize: 19)),
+                                    style: const TextStyle(fontSize: 19)),
                               ],
                             ),
                           ),
@@ -488,14 +488,14 @@ DateTime? lastSnackBarTime;
                                                                       .toString() ==
                                                                   "en"
                                                               ? Radius.zero
-                                                              : Radius.circular(
+                                                              : const Radius.circular(
                                                                   10),
                                                           topRight: Localizations
                                                                           .localeOf(
                                                                               context)
                                                                       .toString() ==
                                                                   "en"
-                                                              ? Radius.circular(
+                                                              ? const Radius.circular(
                                                                   10)
                                                               : Radius.zero,
                                                           bottomRight: Localizations
@@ -503,7 +503,7 @@ DateTime? lastSnackBarTime;
                                                                               context)
                                                                       .toString() ==
                                                                   "en"
-                                                              ? Radius.circular(
+                                                              ? const Radius.circular(
                                                                   10)
                                                               : Radius.zero,
                                                           bottomLeft: Localizations
@@ -512,14 +512,14 @@ DateTime? lastSnackBarTime;
                                                                       .toString() ==
                                                                   "en"
                                                               ? Radius.zero
-                                                              : Radius.circular(
+                                                              : const Radius.circular(
                                                                   10),
                                                         ),
                                                       ),
                                                     ),
                                                     child: Text(
                                                       "Add".tr(),
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                         color: Colors.white,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -628,7 +628,7 @@ DateTime? lastSnackBarTime;
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   border: Border.all(
-                                                      color: Color(0xFFEBEBF3),
+                                                      color: const Color(0xFFEBEBF3),
                                                       width: 2.0),
                                                   borderRadius:
                                                       BorderRadius.circular(10),
@@ -723,7 +723,7 @@ DateTime? lastSnackBarTime;
                                           widget.bloc.searchbutton(context);
                                         },
                                         icon: isSearchActive
-                                            ? Container(
+                                            ? SizedBox(
                                                 width: 25,
                                                 height: 25,
                                                 child: SvgPicture.asset(
@@ -731,10 +731,10 @@ DateTime? lastSnackBarTime;
                                                     fit: BoxFit.contain,
                                                     color: const Color(
                                                         0xFF59c0d2))) // Path to your SVG asset
-                                            : Icon(
+                                            : const Icon(
                                                 size: 25,
                                                 Icons.search,
-                                                color: const Color(0xFF59c0d2),
+                                                color: Color(0xFF59c0d2),
                                               ),
                                       ),
                                     ),
@@ -752,7 +752,7 @@ DateTime? lastSnackBarTime;
                               return SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                    Container(
+                                    SizedBox(
                                       width: screenWidth,
                                       child: dataTable(
                                           widget.bloc.purchaseOrder.lines),
@@ -801,7 +801,7 @@ DateTime? lastSnackBarTime;
                                                 children: [
                                                   Text(
                                                     "Sub Total: ".tr(),
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                       color: Colors.black,
                                                       fontWeight:
                                                           FontWeight.bold,
@@ -818,7 +818,7 @@ DateTime? lastSnackBarTime;
                                                 children: [
                                                   Text(
                                                     "Tax Total: ".tr(),
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                       color: Colors.black,
                                                       fontWeight:
                                                           FontWeight.bold,
@@ -835,7 +835,7 @@ DateTime? lastSnackBarTime;
                                                 children: [
                                                   Text(
                                                     "Total: ".tr(),
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                       color: Colors.black,
                                                       fontWeight:
                                                           FontWeight.bold,
@@ -1048,7 +1048,7 @@ class _DatePickerState extends State<DatePicker> {
                 ? const Color(0xFFEBEBF3)
                 : Colors.red,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: Color(0xFF59c0d2), width: 2.0),

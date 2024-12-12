@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -123,7 +125,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
       builder: (BuildContext context) {
         return AlertDialog(
           contentPadding:
-               EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+               const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
           title: Text("Enter Quantity".tr(), textAlign: TextAlign.center),
           content: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -135,7 +137,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                   children: [
                     TextSpan(
                       text: 'Product Name: '.tr(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.black),
@@ -148,12 +150,12 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                 ),
               ),
               if (fetchedProduct.type == 'batch')
-                Container(
+                SizedBox(
                   width: 300,
                   child: _buildBatchTable(batches, batchQtyControllers),
                 )
               else if (fetchedProduct.type == 'serialized')
-                Container(
+                SizedBox(
                   width: 300,
                   child: _buildSerialList(serial /*, selectedSerials*/),
                 )
@@ -237,8 +239,8 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
         fit: BoxFit.scaleDown,
         child: SingleChildScrollView(
           child: DataTable(
-                dataTextStyle:  TextStyle(fontSize: 20),
-        headingTextStyle:TextStyle(fontSize: 20), 
+                dataTextStyle:  const TextStyle(fontSize: 20),
+        headingTextStyle:const TextStyle(fontSize: 20), 
             columnSpacing: 20,
             columns: [
               DataColumn(
@@ -246,7 +248,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
               DataColumn(
                   label: Text('On Hand'.tr(), textAlign: TextAlign.center)),
               DataColumn(
-                  label: Container(
+                  label: SizedBox(
                       width: 180,
                       child:
                           Text('Quantity'.tr(), textAlign: TextAlign.center))),
@@ -291,7 +293,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                                   FilteringTextInputFormatter.digitsOnly
                                 ],
                                 controller: controller,
-                                style: TextStyle(fontSize: 20),
+                                style: const TextStyle(fontSize: 20),
                                 keyboardType: TextInputType.number,
                                 textAlign: TextAlign.center,
                                 decoration: const InputDecoration(
@@ -337,7 +339,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
     double quantity = 0; // Local quantity variable
 
     return Center(
-      child: Container(
+      child: SizedBox(
         width: 150,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -409,7 +411,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                   children: [
                     TextSpan(
                       text: 'Product Name: '.tr(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.black),
@@ -422,12 +424,12 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                 ),
               ),
               if (fetchedProduct!.productType == 'batch')
-                Container(
+                SizedBox(
                     width: 300,
                     child: _buildBatchTable(
                         fetchedProduct!.batches, batchQtyControllers))
               else if (fetchedProduct!.productType == 'serialized')
-                Container(
+                SizedBox(
                   width: 300,
                   child: _buildSerialList(fetchedProduct!.serials),
                 )
@@ -608,7 +610,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                                           MainAxisAlignment.start,
                                       children: [
                                         Text("Items".tr(),
-                                            style: TextStyle(fontSize: 19)),
+                                            style: const TextStyle(fontSize: 19)),
                                       ],
                                     ),
                                   ),
@@ -685,13 +687,13 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                                                                           "en"
                                                                       ? Radius
                                                                           .zero
-                                                                      : Radius
+                                                                      : const Radius
                                                                           .circular(
                                                                               10),
                                                                   topRight: Localizations.localeOf(context)
                                                                               .toString() ==
                                                                           "en"
-                                                                      ? Radius
+                                                                      ? const Radius
                                                                           .circular(
                                                                               10)
                                                                       : Radius
@@ -699,7 +701,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                                                                   bottomRight: Localizations.localeOf(context)
                                                                               .toString() ==
                                                                           "en"
-                                                                      ? Radius
+                                                                      ? const Radius
                                                                           .circular(
                                                                               10)
                                                                       : Radius
@@ -709,7 +711,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                                                                           "en"
                                                                       ? Radius
                                                                           .zero
-                                                                      : Radius
+                                                                      : const Radius
                                                                           .circular(
                                                                               10),
                                                                 ),
@@ -717,7 +719,7 @@ class _PhysicalCountFormpageState extends State<PhysicalCountFormpage> {
                                                             ),
                                                             child: Text(
                                                               "Add".tr(),
-                                                              style: TextStyle(
+                                                              style: const TextStyle(
                                                                 color: Colors
                                                                     .white,
                                                                 fontWeight:
@@ -927,7 +929,7 @@ getBranchProductByBarcode( Utilts .branchid, searchTerm:barcode);
                                                       .searchbutton(context);
                                                 },
                                                 icon: isSearchActive
-                                                    ? Container(
+                                                    ? SizedBox(
                                                         width: 25,
                                                         height: 25,
                                                         child: SvgPicture.asset(
@@ -957,7 +959,7 @@ getBranchProductByBarcode( Utilts .branchid, searchTerm:barcode);
                                       return SingleChildScrollView(
                                         child: Column(
                                           children: [
-                                            Container(
+                                            SizedBox(
                                               width: screenWidth,
                                               // height: tableHeight,
                                               child: dataTable(widget
@@ -1013,7 +1015,7 @@ getBranchProductByBarcode( Utilts .branchid, searchTerm:barcode);
                                                           Text(
                                                             "Calculated Value: "
                                                                 .tr(),
-                                                            style: TextStyle(
+                                                            style: const TextStyle(
                                                               color:
                                                                   Colors.black,
                                                               fontWeight:
@@ -1188,7 +1190,7 @@ getBranchProductByBarcode( Utilts .branchid, searchTerm:barcode);
                                                 ),
                                                 child: Text(
                                                   "Select".tr(),
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       color: Colors.white,
                                                       fontWeight:
                                                           FontWeight.bold),
@@ -1198,7 +1200,7 @@ getBranchProductByBarcode( Utilts .branchid, searchTerm:barcode);
                                                 },
                                               ),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 5,
                                             ),
                                             Container(

@@ -122,7 +122,7 @@ class _CreateListState extends State<CreateList> {
                   children: [
                     TextSpan(
                       text: 'Product Name: '.tr(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.black),
@@ -182,10 +182,7 @@ class _CreateListState extends State<CreateList> {
         );
       },
     );
-    //   qtyController.dispose();
-    // for (var controller in batchQtyControllers) {
-    //   controller.dispose();
-    // }
+
   }
 
   Widget _buildSerialList(List<CreateListlineMod?>? serials) {
